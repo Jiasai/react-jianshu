@@ -1,0 +1,111 @@
+@import '../../assets/style/variables.scss';
+.header{
+    height: 56px;
+    border-bottom: 1px solid #f0f0f0;
+    background: #fff;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top:0;
+    z-index: 100;
+    &_mainwidth{
+        max-width: 1440px;
+        margin:0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &_logo{
+        width: 100px;
+        height: 100%;
+        a{
+            display: block;
+            height: 100%;
+            img{width: 100%;}
+        }
+    }
+    &_left{
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+    }
+    &_menu{
+        display: flex;
+        justify-content:flex-start;
+        height: 56px;
+        margin-left: 10px;
+        &_item{
+            height: 100%;
+            a{
+                display: block;
+                padding:0px 25px;
+                color: $font-normal-color;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                font-size:$font-title-size;
+            }
+            a:hover{
+                transition: all .15s ease-in;
+                background: #f8f8f8;
+            }
+        }
+        &_item.active{
+            a{color: $hight-color;}
+            a:hover{background: none;}
+        }
+    &_right{
+        margin-right:20px;
+        display: flex;
+        justify-content:flex-start;
+        div{margin:0px 8px}
+        a{
+            display: block;
+            min-width: 50px;
+            height: 38px;
+            border-radius: 20px;
+            line-height: 36px;
+            text-align: center;
+            font-size: 15px;
+            color: $font-grey-color;
+        }
+        &_login{
+            
+        }
+        &_register{
+            a{
+                border: 1px solid $hight-color;
+                color: $hight-color;
+                min-width: 80px;
+            }
+            a:hover{
+                transition: all .15s ease-in;
+                background-color:rgba(236,97,73,.05);
+            }
+        }
+        &_writeArticle{
+            a{
+                color:$font-white-color;
+                background: $hight-color;
+                min-width: 80px;
+            }
+        }
+    }
+  }  
+  &_search{
+      margin-left:20px;
+      input{
+          width:160px;
+          height: 38px;
+          padding: 0 20px;
+          box-sizing: border-box;
+          border-radius: 20px;
+          background: $background-normal-color;
+          font-size: 14px;
+      }
+      ::placeholder{
+          color: $font-grey-color;
+      }
+  }
+}
+
