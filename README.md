@@ -5,7 +5,9 @@
 ## 技术栈
 
 · React16    丨   · React-router4      丨    · Redux      丨    · Axios 
-——————————————————————————
+
+—————————————————————————————————————
+
 · React-transition-group    丨   · Redux-Thunk中间件      丨    · Sass      丨    · Hook
 
 ### `npm start`
