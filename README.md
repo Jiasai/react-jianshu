@@ -1,10 +1,12 @@
-# Getting Started with Create React App
+# React 开发 企业级项目仿简书PC端
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+开发页面：首页开发、详情页开发、登录权限校验开发、列表页面开发
 
-## Available Scripts
+## 技术栈
 
-In the project directory, you can run:
+· React16       · React-router4          · Redux          · Axios
+
+· React-transition-group       · Redux-Thunk中间件          · Sass          · Hook
 
 ### `npm start`
 
