@@ -1,0 +1,30 @@
+.toast{
+    background:rgba(0, 0, 0, 0.6);
+    position: absolute;
+    z-index: 100;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &_img{
+        width:23px;
+        margin-right: 5px;
+        img{width: 100%;}
+    }
+    &_title{
+        line-height: 22px;
+    }
+   
+}
+.toast.bgnone{
+    background: none;
+    color: #888;
+}
+.noneToast{
+    display: none;
+}
