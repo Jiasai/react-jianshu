@@ -1,12 +1,8 @@
-import React,{useEffect} from "react";
+import React,{useEffect,Fragment} from "react";
 import Header from "./common/header";
 
-//引入Provider连接器和store
-import { Provider } from "react-redux";
-import store from './store/index';
-
 //引入toast弹窗提示
-import Toast,{ showToastEffect } from './common/Toast/index';
+import Toast,{ showToastEffect ,} from './common/Toast/index';
 
 const AppEffect=()=>{
   const {showToast} = showToastEffect();
@@ -29,10 +25,10 @@ const AppEffect=()=>{
 function App() {
   useEffect(AppEffect,[]);
   return (
-    <Provider store = {store}>
+    <Fragment>
       <Header />
       <Toast />
-      </Provider>
+     </Fragment>
   );
 }
 

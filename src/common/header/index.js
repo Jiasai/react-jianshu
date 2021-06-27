@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import React, { useEffect, useState} from "react";
 import { getSearchValueChangeAction } from "../../store/actionCreators";
+
 //引入样式
 import "./header.scss";
 //引入样式css-in-js
@@ -9,11 +9,51 @@ import "./header.scss";
 //引入logo图片路径
 import logoPic from "../../assets/images/logo.png";
 
-const Header = (props) => {
-  const { currentTitle, menu, currentPage, searchValue, ChangSearchValue } =
-    props;
+//引入store
+import store from '../../store/index';
+
+//useState方法
+let useStateSet={};
+
+const thisState=(props=useStateSet)=>{
+    const {setCurrentTitle,setMenu,setCurrentPage,setSearchValue} = props;
+    //拿到store数据
+    const { currentTitle, menu, currentPage, searchValue } =
+    store.getState();
+    setCurrentTitle(currentTitle);
+    setMenu(menu);
+    setCurrentPage(currentPage);
+    setSearchValue(searchValue);
+}
+
+
+//修改 搜索框 input的value值
+const ChangSearchValue=(e)=>{
+  const action =getSearchValueChangeAction(e.target.value);
+  store.dispatch(action);
+}
+
+
+const Header = () => {
+
+    //用useState定义
+    const [currentTitle,setCurrentTitle] = useState('');
+    const [menu,setMenu] = useState([]);
+    const [currentPage,setCurrentPage] = useState('');
+    const [searchValue,setSearchValue] = useState('');
+
   useEffect(() => {
     document.title = currentTitle;
+    //把 useState的设置数据方法 存到这个变量
+    useStateSet={setCurrentTitle,setMenu,setCurrentPage,setSearchValue};
+
+    //修改数据
+    thisState();
+
+    //侦听store变化，设置修改数据
+    store.subscribe(thisState);
+    
+
   }, [currentTitle]);
 
   return (
@@ -73,25 +113,4 @@ const Header = (props) => {
   );
 };
 
-/*state数据*/
-const propsState = (state) => {
-  return {
-    menu: state.menu,
-    currentPage: state.currentPage,
-    currentTitle: state.currentTitle,
-    searchValue: state.searchValue,
-  };
-};
-
-/*业务逻辑*/
-const propsDispatch = (dispatch) => {
-  return {
-    //修改search搜索的value值
-    ChangSearchValue(e) {
-      const action = getSearchValueChangeAction(e.target.value);
-      dispatch(action);
-    },
-  };
-};
-
-export default connect(propsState, propsDispatch)(Header);
+export default Header;
