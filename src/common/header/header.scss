@@ -68,6 +68,7 @@
             text-align: center;
             font-size: 15px;
             color: $font-grey-color;
+            .iconfont{font-size: 15px;}
         }
         &_login{
             
@@ -88,24 +89,107 @@
                 color:$font-white-color;
                 background: $hight-color;
                 min-width: 80px;
+                display: flex;
+                align-items: center;
+                padding: 0px 18px;
+                span:first-child{
+                    margin-right: 5px;
+                }
             }
         }
     }
   }  
   &_search{
       margin-left:20px;
+      border-radius: 20px;
+      background: $background-normal-color;
+      display: flex;
+      align-items: center;
       input{
           width:160px;
           height: 38px;
-          padding: 0 20px;
+          padding: 0px 5px 0px 20px;
           box-sizing: border-box;
-          border-radius: 20px;
-          background: $background-normal-color;
+          background: none;
           font-size: 14px;
+      }
+      span{
+        width: 30px;
+        height: 30px;
+        border-radius: 24px;
+        margin-right: 4px;
+        line-height: 36px;
       }
       ::placeholder{
           color: $font-grey-color;
       }
   }
 }
+
+
+/* CSSTransition 状态切换动画 */
+/*入场动画 & 初始动画*/
+
+.header .fade-enter{  
+    width: 160px;
+  }
+  .header .fade-enter-active{
+    width:240px;
+    transition: all 0.28s ease-in;
+  }
+  .header  .fade-enter-done{
+    width:240px;
+  }
+  
+  /*出场动画*/
+  .header .fade-exit{ 
+    width:240px;
+  }
+  .header .fade-exit-active{  
+    width: 160px;
+    transition: all .28s ease-out;
+  }
+  .header .fade-exit-done{  
+    width: 160px;
+  }
+
+//背景变化动画
+.header .bgcolor-enter{  
+    background: $background-normal-color;
+  }
+  .header .bgcolor-enter-active{
+    background: #777;
+    transition: all 0.28s linear;
+  }
+  .header  .bgcolor-enter-done{
+    background: #777;
+  }
+  
+  /*出场动画*/
+  .header .bgcolor-exit{ 
+    background: #777;
+  }
+  .header .bgcolor-exit-active{  
+    background: $background-normal-color;
+    transition: all .28s linear;
+  }
+  .header .bgcolor-exit-done{  
+    background: $background-normal-color;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

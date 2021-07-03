@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 //引入actionTypes
-import { CHANGE_INPUT_VALUE, CHANGE_LIST_DATA, DELETE_LIST_ITEM, RES_LIST_DATA ,CHANGE_SEARCH_VALUE} from './actionTypes';
+import { CHANGE_INPUT_VALUE, CHANGE_LIST_DATA, DELETE_LIST_ITEM, RES_LIST_DATA ,CHANGE_SEARCH_VALUE,CHANGE_SEARCH_TRANSITION} from './actionTypes';
 
 //修改input值改变
 export const getInputChangeAction = (inputValue) => {
@@ -49,6 +49,13 @@ export const getSearchValueChangeAction=(value)=>{
     return{
         type:CHANGE_SEARCH_VALUE,
         value
+    }
+}
+
+//改变search搜索的动画
+export const getSearchTransitionAction=()=>{
+    return{
+        type:CHANGE_SEARCH_TRANSITION
     }
 }
 

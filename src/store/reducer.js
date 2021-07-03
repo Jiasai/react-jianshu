@@ -1,5 +1,5 @@
 //引入actionTypes
-import { CHANGE_INPUT_VALUE, CHANGE_LIST_DATA, DELETE_LIST_ITEM,RES_LIST_DATA,CHANGE_SEARCH_VALUE } from './actionTypes';
+import { CHANGE_INPUT_VALUE, CHANGE_LIST_DATA, DELETE_LIST_ITEM,RES_LIST_DATA,CHANGE_SEARCH_VALUE ,CHANGE_SEARCH_TRANSITION} from './actionTypes';
 
 
 const defaultState = {
@@ -7,6 +7,7 @@ const defaultState = {
     currentPage:'首页',
     currentTitle:'简书-创作你的创作',
     searchValue: '',
+    searchTransition:false
 };
 
 //reducer 可以接收state,但是绝不能直接修改state
@@ -56,6 +57,14 @@ const reducer = (state = defaultState, action) => {
             if(true){
                 const newState = JSON.parse(JSON.stringify(state));
                 newState.searchValue = action.value;
+                return newState;
+            }
+            break;
+        //改变search搜索的Transition动画
+        case CHANGE_SEARCH_TRANSITION:
+            if(true){
+                const newState = JSON.parse(JSON.stringify(state));
+                newState.searchTransition = !newState.searchTransition;
                 return newState;
             }
             break;
