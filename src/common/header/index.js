@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getSearchValueChangeAction,getSearchTransitionAction } from "../../store/actionCreators";
+import { actionCreators } from "./store";
 import { Search, Write } from "@icon-park/react";
 
 //引入CSSTransition,单个组件出、入场
@@ -22,7 +22,7 @@ let useStateSet = {};
 const thisState = (props = useStateSet) => {
   const { setCurrentTitle, setMenu, setCurrentPage, setSearchValue,setSearchTransition } = props;
   //拿到store数据
-  const { currentTitle, menu, currentPage, searchValue,searchTransition } = store.getState();
+  const { currentTitle, menu, currentPage, searchValue,searchTransition } = store.getState().header;
   setCurrentTitle(currentTitle);
   setMenu(menu);
   setCurrentPage(currentPage);
@@ -32,13 +32,13 @@ const thisState = (props = useStateSet) => {
 
 //修改 搜索框 input的value值
 const ChangSearchValue = (e) => {
-  const action = getSearchValueChangeAction(e.target.value);
+  const action = actionCreators.getSearchValueChangeAction(e.target.value);
   store.dispatch(action);
 };
 //serach框动画控制
 const transitionToggle = (searchValue) => {
   if (searchValue === "") {
-    const action = getSearchTransitionAction();
+    const action = actionCreators.getSearchTransitionAction();
     store.dispatch(action)
   }
 }
