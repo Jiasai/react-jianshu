@@ -5,7 +5,7 @@
 ## 技术栈
 
 
-· React16    丨   · React-router4      丨    · Redux      丨    · Axios      丨    · Sass      丨    · Hook
+· React17    丨   · React-router5      丨    · Redux4      丨    · Axios      丨    · Sass      丨    · Hook
 
 —————————————————————————————————————
 

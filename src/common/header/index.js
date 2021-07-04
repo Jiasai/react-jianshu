@@ -8,7 +8,7 @@ import { CSSTransition } from "react-transition-group";
 //引入样式
 import "./header.scss";
 //引入样式css-in-js
-// import HeaderWrap from './headerStyle.js';
+import {Searchinfo,SearchinfoTitle, SearchinfoSwitch,SearchinfoItem} from './styledComponents.js';
 
 //引入logo图片路径
 import logoPic from "../../assets/images/logo.png";
@@ -21,7 +21,7 @@ let useStateSet = {};
 
 const thisState = (props = useStateSet) => {
   const { setCurrentTitle, setMenu, setCurrentPage, setSearchValue,setSearchTransition } = props;
-  //拿到store数据
+  //拿到header的store数据
   const { currentTitle, menu, currentPage, searchValue,searchTransition } = store.getState().header;
   setCurrentTitle(currentTitle);
   setMenu(menu);
@@ -115,6 +115,23 @@ const Header = () => {
                 fill={searchTransition ? "#fff" : "#999"}
               />
             </CSSTransition>
+            <Searchinfo className={searchTransition?'':'searchinfo_none'}>
+              <SearchinfoTitle>
+                <div className='search_info_title'>热门搜索</div>
+                <SearchinfoSwitch><span className='iconfont icon-shuaxin1'></span>换一换</SearchinfoSwitch>
+                </SearchinfoTitle>         
+                <div style={{"overflow":"hidden"}}>
+                  <SearchinfoItem>教育</SearchinfoItem>
+                  <SearchinfoItem>简书</SearchinfoItem>
+                  <SearchinfoItem>生活</SearchinfoItem>
+                  <SearchinfoItem>投稿</SearchinfoItem>
+                  <SearchinfoItem>历史</SearchinfoItem>
+                  <SearchinfoItem>人文</SearchinfoItem>
+                  <SearchinfoItem>考研</SearchinfoItem>
+                  <SearchinfoItem>ReactJs</SearchinfoItem>
+
+                </div>   
+            </Searchinfo>
           </div>
         </div>
         <div className="header_menu_right">
