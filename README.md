@@ -5,11 +5,13 @@
 ## 技术栈
 
 
-· React17    丨   · React-router5      丨    · Redux4      丨    · Axios      丨    · Sass      丨    · Hook
+· React17    丨   · React-router5    丨   · Redux4    丨 · Redux-Thunk中间件     丨    · combineReducers    丨    · Axios    丨   · Hook  
 
 —————————————————————————————————————
 
-· React-transition-group    丨   · Redux-Thunk中间件      丨    · combineReducers      丨    · immutable
+· React-transition-group      丨    · Sass     丨    · css-in-js     丨   · IconPark
+
+## 
 
 ### `线上访问地址:`
 
