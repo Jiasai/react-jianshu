@@ -5,12 +5,15 @@
 ## 技术栈
 
 
-· React16    丨   · React-router4      丨    · Redux      丨    · Axios 
+· React16    丨   · React-router4      丨    · Redux      丨    · Axios      丨    · Sass      丨    · Hook
 
 —————————————————————————————————————
 
-· React-transition-group    丨   · Redux-Thunk中间件      丨    · Sass      丨    · Hook
+· React-transition-group    丨   · Redux-Thunk中间件      丨    · combineReducers      丨    · immutable
 
+### `线上访问地址:`
+
+http://jianshu.thinkshe.com
 
 ### `npm start`
 
