@@ -32,19 +32,10 @@ export const getSearchTransitionAction=(value)=>{
 //使用了thunk中间件，可以return函数,
 //在这个函数中，可以发送请求，定义对象action , dispatch派发action通知store做事
 
-export const getSearchListAction = () => {
+export const getSearchListAction = (url) => {
     return (dispatch) => {
-        if(sessionStorage.getItem(constants.SEARCH_LIST_DATA)){
-            const action = {
-                type: constants.SEARCH_LIST_DATA,
-                data: JSON.parse(sessionStorage.getItem(constants.SEARCH_LIST_DATA))
-            }
-            dispatch(action); //在这里派发action,让store修改
-            return;
-        }
-        axios.get('/api/headerList.json').then(res => {
-            //存储本地
-            sessionStorage.setItem(constants.SEARCH_LIST_DATA,JSON.stringify(res.data.data));
+
+        axios.get(url).then(res => {          
             const action = {
                 type: constants.SEARCH_LIST_DATA,
                 data: res.data.data
@@ -54,7 +45,6 @@ export const getSearchListAction = () => {
 
     }
 }
-
 
 
 

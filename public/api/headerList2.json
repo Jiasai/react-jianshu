@@ -1,0 +1,12 @@
+{
+    "erron":0,
+    "data":[
+        {"title":"人工智能","path":"/zhineng"},
+        {"title":"环境科学","path":"/huanjing"},
+        {"title":"美学","path":"/meixue"},
+        {"title":"设计","path":"/design"},
+        {"title":"音乐","path":"/yinyue"},
+        {"title":"电影","path":"/dianying"},
+        {"title":"绘画","path":"/huihua"}
+    ]
+}

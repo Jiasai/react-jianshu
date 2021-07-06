@@ -43,12 +43,15 @@ const thisState = (props = useStateSet) => {
     searchTransition,
     serachList,
   } = store.getState().header;
+  //数据响应
   setCurrentTitle(currentTitle);
   setMenu(menu);
   setCurrentPage(currentPage);
   setSearchValue(searchValue);
   setSearchTransition(searchTransition);
   setSerachList(serachList);
+
+  return { serachList };
 };
 
 //修改 搜索框 input的value值
@@ -80,7 +83,8 @@ const infoItemSearchValue = (e) => {
 };
 //换一换
 const handleHuanyihuan = () => {
-  console.log("我被点击了");
+  const action = actionCreators.getSearchListAction("/api/headerList2.json");
+  store.dispatch(action);
   setTimeout(() => {
     inputSearch.focus();
   }, 30); //input获取焦点
@@ -88,9 +92,12 @@ const handleHuanyihuan = () => {
 
 //search搜索提示获取数据
 const getSearchList = () => {
-  const action = actionCreators.getSearchListAction();
+  const { serachList } = thisState(); //获取store数据
+  if (serachList.length > 1) return;
+  const action = actionCreators.getSearchListAction("/api/headerList.json");
   store.dispatch(action);
 };
+
 
 const Header = () => {
   //用useState定义
