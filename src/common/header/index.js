@@ -95,8 +95,17 @@ const infoItemSearchValue = (e) => {
   store.dispatch(action);
   closeTransition();
 };
+
+
+
 //换一换
-const handleHuanyihuan = () => {
+const handleHuanyihuan = (rotate,setRotate) => {
+  //icon小图标旋转
+  if(rotate){
+    setRotate(false)
+  }else{
+    setRotate(true)
+  }
   let { page,totalPage } = thisState(); //获取store数据
   //改变page
   if(page < totalPage-1){
@@ -131,6 +140,7 @@ const Header = () => {
   const [searchTransition, setSearchTransition] = useState(false);
   const [itemlist, setItemlist] = useState([]);
   const [lock, setLock] = useState(true); //关闭动画执行的锁
+  const [rotate,setRotate] = useState(false);
   useEffect(() => {
     document.title = currentTitle;
     //把 useState的设置数据方法 存到这个变量
@@ -218,8 +228,9 @@ const Header = () => {
             >
               <SearchinfoTitle>
                 <div className="search_info_title">热门搜索</div>
-                <SearchinfoSwitch onClick={handleHuanyihuan}>
-                  <span className="iconfont icon-shuaxin1"></span>换一换
+                <SearchinfoSwitch onClick={()=>handleHuanyihuan(rotate,setRotate)}>
+                  <span className={rotate?"iconfont icon-shuaxin1 routate":"iconfont icon-shuaxin1"}></span>
+                  换一换
                 </SearchinfoSwitch>
               </SearchinfoTitle>
               <div style={{ overflow: "hidden" }}>

@@ -61,6 +61,20 @@ const SearchinfoSwitch = styled.div`
   transition:all .28s;
   font-size:13px;
   &:hover{color:#333}
+  overfllow:hidden;
+  span.iconfont{
+    display:inline-block;
+    text-align: center;
+    line-height: 30px;
+    height:30px;
+    width:20px;
+    vertical-align: middle;
+    transition: all .28s linear;
+    transform:rotate(0deg);
+  }
+  span.iconfont.routate{
+    transform:rotate(360deg);
+  }
 `
 
 const SearchinfoItem = styled.div`
