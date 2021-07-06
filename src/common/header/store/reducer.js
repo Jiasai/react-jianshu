@@ -8,7 +8,9 @@ const defaultState = {
     currentTitle:'简书-创作你的创作',
     searchValue: '',
     searchTransition:false,
-    serachList:[]
+    serachList:[],
+    page:0,
+    totalPage:1
 };
 
 
@@ -35,6 +37,15 @@ const reducer = (state = defaultState, action) => {
             if(true){
                 const newState = JSON.parse(JSON.stringify(state));
                 newState.serachList = action.data;
+                newState.totalPage = Math.ceil(action.data.length / 6);
+                return newState;
+            }
+            break;
+        //改变serach搜索的page
+        case constants.CHANGE_SEARCH_PAGE:
+            if(true){
+                const newState = JSON.parse(JSON.stringify(state));
+                newState.page = action.value;
                 return newState;
             }
             break;

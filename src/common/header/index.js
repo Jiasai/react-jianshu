@@ -32,7 +32,7 @@ const thisState = (props = useStateSet) => {
     setCurrentPage,
     setSearchValue,
     setSearchTransition,
-    setSerachList,
+    setItemlist,
   } = props;
   //拿到store中 header模块的store数据
   const {
@@ -42,6 +42,8 @@ const thisState = (props = useStateSet) => {
     searchValue,
     searchTransition,
     serachList,
+    page,
+    totalPage
   } = store.getState().header;
   //数据响应
   setCurrentTitle(currentTitle);
@@ -49,9 +51,21 @@ const thisState = (props = useStateSet) => {
   setCurrentPage(currentPage);
   setSearchValue(searchValue);
   setSearchTransition(searchTransition);
-  setSerachList(serachList);
-
-  return { serachList };
+  
+  if(serachList.length>1){
+    //根据page对数据分页，返回
+    const resultList = [];
+    for(let i=page * 6; i < (page+1)*6; i++){
+      if(serachList[i]){
+        resultList.push(serachList[i]);
+      }     
+    }
+    setItemlist(resultList);
+  }else{
+    setItemlist(serachList);
+  }
+  // 返回出去，别的函数要用
+  return { serachList,page,totalPage};
 };
 
 //修改 搜索框 input的value值
@@ -83,8 +97,17 @@ const infoItemSearchValue = (e) => {
 };
 //换一换
 const handleHuanyihuan = () => {
-  const action = actionCreators.getSearchListAction("/api/headerList2.json");
+  let { page,totalPage } = thisState(); //获取store数据
+  //改变page
+  if(page < totalPage-1){
+    page++;
+  }else{
+    page = 0;
+  }
+  //改变store中的page
+  const action = actionCreators.getSearchPageAction(page);
   store.dispatch(action);
+
   setTimeout(() => {
     inputSearch.focus();
   }, 30); //input获取焦点
@@ -106,7 +129,7 @@ const Header = () => {
   const [currentPage, setCurrentPage] = useState("");
   const [searchValue, setSearchValue] = useState("");
   const [searchTransition, setSearchTransition] = useState(false);
-  const [serachList, setSerachList] = useState([]);
+  const [itemlist, setItemlist] = useState([]);
   const [lock, setLock] = useState(true); //关闭动画执行的锁
   useEffect(() => {
     document.title = currentTitle;
@@ -117,7 +140,7 @@ const Header = () => {
       setCurrentPage,
       setSearchValue,
       setSearchTransition,
-      setSerachList,
+      setItemlist,
     };
 
     //修改数据
@@ -200,7 +223,7 @@ const Header = () => {
                 </SearchinfoSwitch>
               </SearchinfoTitle>
               <div style={{ overflow: "hidden" }}>
-                {serachList.map((item, index) => {
+                {itemlist.map((item, index) => {
                   return (
                     <SearchinfoItem
                       key={index}
