@@ -10,6 +10,7 @@
     z-index: 100;
     &_mainwidth{
         max-width: 1440px;
+        min-width: 1085px;
         margin:0 auto;
         display: flex;
         justify-content: space-between;
@@ -70,7 +71,6 @@
             color: $font-grey-color;
             .iconfont{font-size: 15px;}
         }
-
         &_register{
             a{
                 border: 1px solid $hight-color;
@@ -118,6 +118,7 @@
         border-radius: 24px;
         margin-right: 4px;
         line-height: 36px;
+        cursor: pointer;
       }
       ::placeholder{
           color: $font-grey-color;

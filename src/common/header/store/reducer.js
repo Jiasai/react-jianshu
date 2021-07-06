@@ -7,7 +7,8 @@ const defaultState = {
     currentPage:'首页',
     currentTitle:'简书-创作你的创作',
     searchValue: '',
-    searchTransition:false
+    searchTransition:false,
+    serachList:[]
 };
 
 
@@ -25,7 +26,15 @@ const reducer = (state = defaultState, action) => {
         case constants.CHANGE_SEARCH_TRANSITION:
             if(true){
                 const newState = JSON.parse(JSON.stringify(state));
-                newState.searchTransition = !newState.searchTransition;
+                newState.searchTransition = action.value;
+                return newState;
+            }
+            break;
+        //改变serach搜索提示的list数据
+        case constants.SEARCH_LIST_DATA:
+            if(true){
+                const newState = JSON.parse(JSON.stringify(state));
+                newState.serachList = action.data;
                 return newState;
             }
             break;

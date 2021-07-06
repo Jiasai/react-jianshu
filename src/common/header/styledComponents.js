@@ -63,9 +63,7 @@ const SearchinfoSwitch = styled.div`
   &:hover{color:#333}
 `
 
-const SearchinfoItem = styled.a.attrs({
-  href:'#'
-})`
+const SearchinfoItem = styled.div`
   padding:0px 7px;
   font-size:12px;
   line-height:20px;
