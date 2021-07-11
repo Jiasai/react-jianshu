@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,Fragment } from "react";
 import { actionCreators } from "./store";
 import { Search, Write } from "@icon-park/react";
 
@@ -161,6 +161,7 @@ const Header = () => {
   }, [currentTitle]);
 
   return (
+    <Fragment>
     <div className="header">
       <div className="header_mainwidth">
         <div className="header_left">
@@ -270,6 +271,8 @@ const Header = () => {
         </div>
       </div>
     </div>
+    <div className='header_space'></div>
+    </Fragment>
   );
 };
 

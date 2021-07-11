@@ -1,5 +1,9 @@
 import React,{useEffect,Fragment} from "react";
+import { Route,Switch,BrowserRouter } from "react-router-dom";
+
 import Header from "./common/header";
+import Home from "./view/home";
+import Detail from "./view/detail";
 
 //引入toast弹窗提示
 import Toast,{ showToastEffect ,} from './common/Toast/index';
@@ -61,8 +65,16 @@ function App() {
   useEffect(AppEffect,[]);
   return (
     <Fragment>
-      <Header />
-      <Toast />
+    <Header />
+    <Toast />
+    <BrowserRouter>
+      <Switch>
+
+        <Route path='/detail/:id' component={Detail} />
+        <Route path='/' component={Home} />
+
+      </Switch>
+     </BrowserRouter>
      </Fragment>
   );
 }

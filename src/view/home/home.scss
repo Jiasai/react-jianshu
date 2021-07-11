@@ -1,0 +1,111 @@
+@import '../../assets/style/variables.scss';
+.wrapper{
+    width:960px;
+    margin: 0 auto;
+    min-height: 600px;
+}
+.home{
+    display: flex;   
+    &_left{
+        flex: 1;        
+        padding-top:30px;
+        &_banner{
+            height: 240px;
+            display: flex;
+            align-items:center;
+            overflow: hidden;
+            border-radius: 5px;
+            position: relative;
+            img{width: 100%;display: block;}
+            &:after{
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: black;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 10;
+                opacity: .1;
+            }
+        }
+    }
+    &_right{       
+        padding-top:30px;
+        margin-left:20px;
+        width:320px;
+    }
+
+    .topic{
+        display: flex;
+        flex-wrap: wrap;
+        margin:30px 0px 5px;
+        &_item{           
+            display: flex;
+            margin-right: 25px;
+            margin-bottom: 20px;
+            align-items: center;
+            background: $background-grey-color;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.28s linear;
+            &:hover{
+                box-shadow:0px 3px 8px rgba(0,0,0,.12);
+            }
+            &_img{
+                width: 30px;
+                height: 30px;
+                overflow: hidden;   
+                img{width:100%;height: 100%;}
+            }
+            &_title{
+                padding: 0px 15px;
+                font-size: 13px;
+            }
+
+        }
+        &_more{
+            display: flex;
+            height: 30px;
+            align-items: center;
+            cursor: pointer;
+            transition: all .28s linear;
+            color: $font-middle-color;
+            &:hover{color: #000;}
+        }
+    }
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
