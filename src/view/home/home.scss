@@ -77,6 +77,45 @@
         }
     }
     
+    .articleList{
+
+        &_item{
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 2px 20px 0;
+            border-bottom: 1px solid #f0f0f0;
+            margin: 0 0 15px;
+            &_text{
+                flex: 1;
+                padding-right: 15px;
+                h4{
+                    font-size: 18px;
+                    a:hover{
+                        text-decoration: underline;
+                    }
+                }
+                &_abstract{
+                    margin-top: 9px;
+                    font-size: 13px;
+                    color: $font-grey-color;
+                    line-height: 24px;
+                    @include ellipsis(3);
+                }
+            }
+            &_pic{
+                width:150px;
+                height:100px;
+                overflow: hidden;
+                border-radius: 3px;
+                a{
+                    display: block;
+                    height: 100%;
+                    img{width:100%}
+                    height: 100%;
+                }
+            }
+        }
+    }
 
 }
 

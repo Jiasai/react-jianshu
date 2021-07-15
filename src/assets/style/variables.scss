@@ -7,3 +7,16 @@ $font-title-size:17px;
 
 $background-normal-color:#eee;
 $background-grey-color:#f4f4f4;
+
+
+@mixin ellipsis($num){
+    /*文字溢出省略*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical;
+    white-space: normal !important;
+    word-wrap: break-word;
+         
+}

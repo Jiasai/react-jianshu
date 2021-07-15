@@ -28,8 +28,7 @@ const AppEffect=()=>{
     showToast({
       show:true,
       message:'加载组件失败',
-      icon:'fail',
-      bgnone:true
+      icon:'fail'
     });
   },2000);
   setTimeout(()=>{
@@ -49,7 +48,7 @@ const AppEffect=()=>{
       show:true,
       message:'欢迎来到简书！',
       icon:'success',
-      bgnone:true
+     // bgnone:true
     });
   },5000);
   setTimeout(()=>{
