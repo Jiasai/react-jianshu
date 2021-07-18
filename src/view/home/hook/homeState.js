@@ -5,7 +5,7 @@ const useListState = ()=>{
     const [articleList,setArticleList] = useState([]);
 
     useEffect(()=>{   
-           
+
         //假定发送http请求，得到listData 数据
         const listData = [
             {
@@ -43,7 +43,7 @@ const useListState = ()=>{
 
         //修改articleList
         setArticleList(listData);
-
+        
     },[])
 
     return articleList;
