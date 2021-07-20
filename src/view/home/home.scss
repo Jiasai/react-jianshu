@@ -32,9 +32,9 @@
         }
     }
     &_right{       
-        padding-top:30px;
-        margin-left:20px;
-        width:320px;
+        padding-top:25px;
+        margin-left:35px;
+        width:280px;
     }
 
     .topic{
@@ -113,6 +113,15 @@
                     img{width:100%}
                     height: 100%;
                 }
+            }
+        }
+    }
+    .recomment{
+        &_item{
+            &_img{
+                width: 100%;
+                margin-bottom: 6px;
+                border-radius: 4px;
             }
         }
     }
