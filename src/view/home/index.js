@@ -5,9 +5,6 @@ import List from "./components/List";
 import Recomment from "./components/Recomment";
 import Writer from "./components/Writer";
 
-import Hello from "./hook/reactDemo";
-
-
 import bannerImg from '../../assets/images/20760323-d6f98ab09910ae02.jpg'
 
 
@@ -30,8 +27,7 @@ const Home = () =>{
             <div className='home_right'>
                 <Recomment />
                 <Writer />
-                <hr />
-                <Hello pageTitle="这是Hello组件" />
+                
             </div>
         </div>
         
