@@ -4,6 +4,10 @@
     margin: 0 auto;
     min-height: 600px;
 }
+@media(max-width:1080px){
+    .wrapper{width:750px;}
+    .wrapper .home_right{width:220px;}
+}
 .home{
     display: flex;   
     &_left{
@@ -125,7 +129,41 @@
             }
         }
     }
-
+    .writer{
+        margin-top:25px;
+        &_top{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        &_item{
+            display: flex;
+            margin-bottom: 12px;
+            &_pic{
+                margin-right: 10px;
+                a{
+                    display: block;
+                    width:48px;height: 48px;
+                    img{
+                        width:100%;
+                        height: 100%;
+                        border: 1px solid #ddd;
+                        border-radius: 50%;
+                    }
+                }
+            }
+            &_text{
+                flex: 1;
+                &_name{margin-top: 5px;}
+                &_Jieshao{
+                    color: #969696;
+                    font-size: 12px;
+                    margin-top: 3px;
+                }
+            }
+        }
+    }
 }
 
 

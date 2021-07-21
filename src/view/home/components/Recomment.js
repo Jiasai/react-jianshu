@@ -7,7 +7,7 @@ const Recomment = (props) =>{
         <div className="recomment">
             {
                 recommentList.map(item => {
-                   return <div className="recomment_item" key={item.id}><img className="recomment_item_img" src={item.imgUrl} alt="" /></div>
+                   return( <div className="recomment_item" key={item.id}><img className="recomment_item_img" src={item.imgUrl} alt="" /></div>)
                 })
             }
          

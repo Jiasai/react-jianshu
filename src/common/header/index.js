@@ -126,7 +126,7 @@ const handleHuanyihuan = (rotate,setRotate) => {
 const getSearchList = () => {
   const { serachList } = thisState(); //获取store数据
   if (serachList.length > 1) return;
-  const action = actionCreators.getSearchListAction("/api/headerList.json");
+  const action = actionCreators.getSearchListAction("/api/header.json");
   store.dispatch(action);
 };
 

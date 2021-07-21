@@ -36,9 +36,11 @@ const Searchinfo = styled.div`
   box-shadow:0 0 8px rgba(0,0,0,.2);
   transition: all .28s linear;
   z-index:100;
+  
   opacity:1;
   transform: translateY(0px);
   &.searchinfo_none{
+    visibility: hidden;
     opacity:0;
     z-index:-10;
     transform: translateY(20px);
@@ -60,6 +62,7 @@ const SearchinfoSwitch = styled.div`
   cursor:pointer;
   transition:all .28s;
   font-size:13px;
+  color:#969696;
   &:hover{color:#333}
   overfllow:hidden;
   span.iconfont{
