@@ -26,7 +26,8 @@ const getWriterData = async (setWriterList) => {
     setWriterList(result.data?.writerList);
   }
 };
-
+//所谓自定义hooks, 本质还是生命周期函数的一种 扩展使用，对 useEffect()的扩展应用，比如轻松实现，点击不断累加+1
+//跨组件传值响应，还是要借助， redux数据框架
 //文章 list 数据
 const useListState = () => {
   //这里面不可以直接定义变量，必须要写函数 才行
@@ -43,6 +44,7 @@ const useListState = () => {
     getWriterData(setWriterList);
   }, [])
 
+
   return {
     articleList,
     setArticleList,
@@ -51,7 +53,7 @@ const useListState = () => {
     topicList,
     setTopicList,
     writerList,
-    setWriterList,
+    setWriterList
   }
 }
 

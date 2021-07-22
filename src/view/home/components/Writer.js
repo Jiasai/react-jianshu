@@ -25,7 +25,7 @@ const handleHuanyihuan = (rotate,setRotate) => {
   
   };
 
-const Writer = () =>{
+const Writer = (props) =>{
     const [rotate,setRotate] = useState(false);
     const {writerList} = useListState();
     return(

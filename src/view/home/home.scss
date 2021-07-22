@@ -164,6 +164,18 @@
             }
         }
     }
+    .readMore{
+        height: 40px;
+        margin: 40px auto 60px;
+        padding: 10px 15px;
+        text-align: center;
+        font-size: 15px;
+        border-radius: 20px;
+        color:#fff;
+        background-color: #9b9b9b;
+        cursor: pointer;
+        &:hover{background: #8e8e8e;}
+    }
 }
 
 
